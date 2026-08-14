@@ -1,0 +1,62 @@
+# .github/workflows/profile-summary-cards.yml
+#
+# WHY THIS EXISTS
+# ---------------
+# The popular stat widgets (github-readme-stats.vercel.app, streak-stats.demolab.com)
+# are free community-run services. As of today github-readme-stats is returning
+# 503 DEPLOYMENT_PAUSED — the owner has paused it — so every profile using it shows
+# blank boxes. That is why your reference profile's stats card looked broken too.
+#
+# This workflow removes the dependency entirely: it generates the stat cards as SVG
+# files INSIDE YOUR OWN REPO on a schedule. They are served from raw.githubusercontent.com,
+# so they can never go down because of somebody else's Vercel bill.
+#
+# SETUP (3 minutes)
+# -----------------
+#   1. In AmanDadsena/AmanDadsena, create this file at:
+#        .github/workflows/profile-summary-cards.yml
+#   2. Settings -> Actions -> General -> Workflow permissions
+#        -> select "Read and write permissions" -> Save
+#   3. Actions tab -> "GitHub Profile Summary Cards" -> "Run workflow"
+#   4. Wait ~60 seconds. The cards in your README will start rendering.
+#
+# The README I committed already points at these exact paths, so once this runs
+# for the first time, nothing else needs changing.
+
+name: GitHub Profile Summary Cards
+
+on:
+  schedule:
+    # Every day at 18:30 UTC (midnight IST)
+    - cron: "30 18 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    name: generate summary cards
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          BRANCH_NAME: main
+          UTC_OFFSET: 5.5   # India Standard Time
+
+# ---------------------------------------------------------------------------
+# The five cards it generates (theme "tokyonight" is used in your README):
+#
+#   profile-summary-card-output/tokyonight/0-profile-details.svg
+#   profile-summary-card-output/tokyonight/1-repos-per-language.svg
+#   profile-summary-card-output/tokyonight/2-most-commit-language.svg
+#   profile-summary-card-output/tokyonight/3-stats.svg
+#   profile-summary-card-output/tokyonight/4-productive-time.svg
+#
+# Swap "tokyonight" for another theme in both the path and your README if you
+# ever want a different look.
+# ---------------------------------------------------------------------------
