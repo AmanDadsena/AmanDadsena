@@ -94,6 +94,21 @@ Cross-lingual scores are reported **separately**, because an aggregate dominated
 
 ---
 
+## 📂 Other projects
+
+<div align="center">
+
+**[Census 2027 — Digital Enumeration Portal](https://github.com/AmanDadsena/Gen-AI-census)**
+&nbsp;·&nbsp; **[🌐 Live](https://gen-ai-census.vercel.app)**
+
+A self-serve web app for India's next census: walks a household through their own form, shows the phase schedule for every state and UT, answers common rumours from a published corpus that works with **no API key**, and does it all in **eight languages**. A Gemini key unlocks screenshot fact-checking and open-ended chat — everything else works offline by design.
+
+`Next.js` · `TypeScript` · `FastAPI` · `Gemini`
+
+</div>
+
+---
+
 ## 🛠️ Tech I build with
 
 <div align="center">
@@ -135,6 +150,9 @@ Cross-lingual scores are reported **separately**, because an aggregate dominated
 
 <img width="49%" src="https://raw.githubusercontent.com/AmanDadsena/AmanDadsena/main/profile-summary-card-output/tokyonight/3-stats.svg" alt="Stats" />
 <img width="49%" src="https://raw.githubusercontent.com/AmanDadsena/AmanDadsena/main/profile-summary-card-output/tokyonight/2-most-commit-language.svg" alt="Most commit language" />
+
+<img width="49%" src="https://raw.githubusercontent.com/AmanDadsena/AmanDadsena/main/profile-summary-card-output/tokyonight/1-repos-per-language.svg" alt="Repos per language" />
+<img width="49%" src="https://raw.githubusercontent.com/AmanDadsena/AmanDadsena/main/profile-summary-card-output/tokyonight/4-productive-time.svg" alt="Productive time" />
 
 <br/>
 
